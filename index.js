@@ -17,9 +17,18 @@ connectDB();
 // Middleware to parse JSON body
 app.use(express.json());
 
+const allowedOrigins = ["http://localhost:3000", "https://mymeal-planner.netlify.app"];
+
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
