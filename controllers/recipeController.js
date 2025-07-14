@@ -4,7 +4,11 @@ const mongoose = require("mongoose");
 
 // GET all recipes
 exports.getRecipes = asyncHandler(async (req, res) => {
-  const recipes = await Recipe.find().sort({ createdAt: -1 });
+  const { type } = req.query;
+
+  const query = type ? { type: new RegExp(type, "i") } : {};
+  const recipes = await Recipe.find(query).sort({ createdAt: -1 });
+
   res.json(recipes);
 });
 
