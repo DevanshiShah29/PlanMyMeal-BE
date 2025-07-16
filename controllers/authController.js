@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const sendMail = require('../utils/sendMail');
+const sendMail = require("../utils/sendGrid");
 
 const users = {
   Ninad: { password: "Ninad3110", role: "user" },
@@ -8,9 +8,9 @@ const users = {
 };
 
 const allowedUsers = {
-  "devanshifour@gmail.com": "Admin123",
-  "ninadshah2k@gmail.com": "Ninad3110",
-  "devanshio2h@gmail.com": "Devanshi2901",
+  "devanshi.shah@tatvasoft.com": { username: "Admin", password: "Admin123" },
+  "ninadshah2k@gmail.com": { username: "Ninad", password: "Ninad3110" },
+  "devanshio2h@gmail.com": { username: "Devanshi", password: "Devanshi2901" },
 };
 
 exports.loginUser = (req, res) => {
@@ -25,21 +25,23 @@ exports.loginUser = (req, res) => {
 
   res.json({ token, role: user.role, username: username });
 };
-
 exports.handleForgotPassword = async (req, res) => {
   const { email } = req.body;
 
-  if (!allowedUsers[email]) {
+  const user = allowedUsers[email];
+  if (!user) {
     res.status(404);
     throw new Error("Email does not exist in our records");
   }
 
-  const password = allowedUsers[email];
+  const { username, password } = user;
+  const year = new Date().getFullYear();
 
   await sendMail({
     to: email,
     subject: "Your Password for MyMeal Planner",
-    text: `Your password is: ${password}`,
+    templateName: "forgotPassword",
+    data: { email, username, password, year },
   });
 
   res.json({ message: "Password has been sent to your email." });

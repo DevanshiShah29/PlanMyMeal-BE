@@ -16,6 +16,7 @@ const recipeSchema = new mongoose.Schema(
     calories: { type: String },
     time: { type: String },
     level: { type: String },
+    youtubeLink: { type: String },
   },
   { timestamps: true }
 );
