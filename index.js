@@ -7,6 +7,8 @@ const recipeRoutes = require("./routes/recipeRoutes");
 const factRoutes = require("./routes/factsRoutes");
 const authRoutes = require("./routes/authRoutes");
 const foodInfoRoutes = require("./routes/foodInfoRoutes");
+const ayurvedaRoutes = require("./routes/ayurvedaRoutes");
+const classificationRoutes = require("./routes/classificationsRoutes");
 
 const errorHandler = require("./middleware/errorMiddleware");
 const cors = require("cors");
@@ -38,6 +40,8 @@ app.use("/api/items", itemRoutes);
 app.use("/api/recipes", recipeRoutes);
 app.use("/api/facts", factRoutes);
 app.use("/api/food-info", foodInfoRoutes);
+app.use("/api/ayurveda", ayurvedaRoutes);
+app.use("/api/classification", classificationRoutes);
 app.use("/api", authRoutes);
 
 // Test route

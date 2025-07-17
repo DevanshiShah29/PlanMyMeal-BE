@@ -1,7 +1,7 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const generateFactAnswer = async (question) => {
-  const prompt = `Generate a 2-3 lines for **without repeating the question text itself**:
+  const prompt = `Generate a 2-3 lines for without repeating the question text itself:
    ${question}
   
   Include:
