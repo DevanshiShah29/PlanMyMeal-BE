@@ -1,6 +1,6 @@
 // controllers/factController.js
-const Fact = require("../models/factsModel");
-const { generateFactAnswer } = require("../utils/generateFactAnswer");
+const Fact = require("../models/fact-model");
+const { generateFactAnswer } = require("../utils/generate-answer");
 
 // Get all facts
 exports.getAllFacts = async (req, res) => {

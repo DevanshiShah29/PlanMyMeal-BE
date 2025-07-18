@@ -5,7 +5,7 @@ const {
   createCategory,
   updateCategory,
   deleteCategory,
-} = require("../controllers/ayurvedaController");
+} = require("../controllers/category-controller");
 
 // GET all categories
 router.get("/", getAllCategories);

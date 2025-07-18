@@ -2,15 +2,15 @@ require("dotenv").config();
 const express = require("express");
 const app = express(); // starting the express app
 const connectDB = require("./config/db");
-const itemRoutes = require("./routes/itemRoutes");
-const recipeRoutes = require("./routes/recipeRoutes");
-const factRoutes = require("./routes/factsRoutes");
-const authRoutes = require("./routes/authRoutes");
-const foodInfoRoutes = require("./routes/foodInfoRoutes");
-const ayurvedaRoutes = require("./routes/ayurvedaRoutes");
-const classificationRoutes = require("./routes/classificationsRoutes");
+const itemRoutes = require("./routes/item-routes");
+const recipeRoutes = require("./routes/recipe-routes");
+const factRoutes = require("./routes/fact-routes");
+const authRoutes = require("./routes/auth-routes");
+const foodInfoRoutes = require("./routes/foodInfo-routes");
+const ayurvedaRoutes = require("./routes/category-routes");
+const classificationRoutes = require("./routes/classification-routes");
 
-const errorHandler = require("./middleware/errorMiddleware");
+const errorHandler = require("./middleware/error-middleware");
 const cors = require("cors");
 
 // Connect to MongoDB

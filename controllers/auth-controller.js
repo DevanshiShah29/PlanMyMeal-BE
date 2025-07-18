@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const sendMail = require("../utils/sendGrid");
+const sendMail = require("../utils/send-grid");
 
 const users = {
   Ninad: { password: "Ninad3110", role: "user" },
@@ -40,7 +40,7 @@ exports.handleForgotPassword = async (req, res) => {
   await sendMail({
     to: email,
     subject: "Your Password for MyMeal Planner",
-    templateName: "forgotPassword",
+    templateName: "forgot-password",
     data: { email, username, password, year },
   });
 

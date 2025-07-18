@@ -1,7 +1,6 @@
-// routes/factRoutes.js
 const express = require("express");
 const router = express.Router();
-const factController = require("../controllers/factsController");
+const factController = require("../controllers/fact-controller");
 
 router.get("/", factController.getAllFacts);
 router.post("/", factController.createFact);

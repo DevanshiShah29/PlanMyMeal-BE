@@ -1,5 +1,5 @@
-const FoodInfo = require("../models/foodInfo");
-const { generateFoodInfoAnswer } = require("../utils/generateFactAnswer");
+const FoodInfo = require("../models/foodInfo-model");
+const { generateFoodInfoAnswer } = require("../utils/generate-answer");
 
 // @desc   Add new food info card
 // @route  POST /api/food-info

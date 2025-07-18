@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const classificationController = require("../controllers/classificationsController");
-const upload = require("../middleware/uploadMiddleware");
+const classificationController = require("../controllers/classification-controller");
+const upload = require("../middleware/upload-middleware");
 
 router.post("/", upload.single("icon"), classificationController.createClassification);
 router.get("/", classificationController.getAllClassifications);

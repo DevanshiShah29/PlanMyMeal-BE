@@ -1,4 +1,4 @@
-const Classification = require("../models/classificationsModel");
+const Classification = require("../models/classification-model");
 const { uploadToCloudinary } = require("../utils/cloudinary");
 
 exports.createClassification = async (req, res) => {

@@ -1,6 +1,6 @@
 // we define what each route should do
 const asyncHandler = require("express-async-handler"); // helps to handle async/await without try/catch
-const Item = require("../models/itemModel");
+const Item = require("../models/item-model");
 
 // Get all items
 exports.getItems = asyncHandler(async (req, res) => {

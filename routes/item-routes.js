@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getItems, createItem, updateItem, deleteItem } = require("../controllers/itemController");
+const { getItems, createItem, updateItem, deleteItem } = require("../controllers/item-controller");
 
 // Each route (like GET or POST) points to a specific function (called a controller).
 router.route("/").get(getItems).post(createItem);

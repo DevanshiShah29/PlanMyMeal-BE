@@ -6,7 +6,7 @@ const {
   getRecipeById,
   updateRecipe,
   deleteRecipe,
-} = require("../controllers/recipeController");
+} = require("../controllers/recipe-controller");
 
 // All recipes
 router.route("/").get(getRecipes).post(createRecipe);

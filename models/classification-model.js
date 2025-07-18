@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const classificationSchema = new mongoose.Schema(
+const ClassificationSchema = new mongoose.Schema(
   {
     icon: {
       type: String,
@@ -8,7 +8,6 @@ const classificationSchema = new mongoose.Schema(
     },
     name: {
       type: String,
-      enum: ["Satvic", "Rajasic", "Tamasic"],
       required: [true, "Classification name is required"],
       unique: true,
     },
@@ -35,4 +34,4 @@ const classificationSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Classification", classificationSchema);
+module.exports = mongoose.model("Classification", ClassificationSchema);

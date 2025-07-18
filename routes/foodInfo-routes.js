@@ -7,7 +7,7 @@ const {
   deleteFoodInfo,
   generateParagraph,
   addFoodInfoInBulk,
-} = require("../controllers/foodInfoController");
+} = require("../controllers/foodInfo-controller");
 
 // POST - Add a new food info card
 router.post("/", createFoodInfo);
