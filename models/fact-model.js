@@ -1,7 +1,7 @@
 // models/Fact.js
 const mongoose = require("mongoose");
 
-const FactSchema = new mongoose.Schema(
+const factSchema = new mongoose.Schema(
   {
     question: {
       type: String,
@@ -17,4 +17,4 @@ const FactSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Fact", FactSchema);
+module.exports = mongoose.model("Fact", factSchema);

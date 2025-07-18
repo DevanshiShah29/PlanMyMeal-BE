@@ -8,8 +8,7 @@ const {
   deleteRecipe,
 } = require("../controllers/recipe-controller");
 
-// All recipes
 router.route("/").get(getRecipes).post(createRecipe);
-// Recipe by ID
 router.route("/:id").get(getRecipeById).put(updateRecipe).delete(deleteRecipe);
+
 module.exports = router;

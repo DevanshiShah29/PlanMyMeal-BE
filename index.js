@@ -40,8 +40,8 @@ app.use("/api/items", itemRoutes);
 app.use("/api/recipes", recipeRoutes);
 app.use("/api/facts", factRoutes);
 app.use("/api/food-info", foodInfoRoutes);
-app.use("/api/ayurveda", ayurvedaRoutes);
-app.use("/api/classification", classificationRoutes);
+app.use("/api/categories", ayurvedaRoutes);
+app.use("/api/classifications", classificationRoutes);
 app.use("/api", authRoutes);
 
 // Test route

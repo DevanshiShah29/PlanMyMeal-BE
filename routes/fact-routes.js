@@ -1,12 +1,19 @@
 const express = require("express");
 const router = express.Router();
-const factController = require("../controllers/fact-controller");
+const {
+  getAllFacts,
+  createFact,
+  deleteFact,
+  updateFact,
+  addMultipleFacts,
+  generateWithAI,
+} = require("../controllers/fact-controller");
 
-router.get("/", factController.getAllFacts);
-router.post("/", factController.createFact);
-router.delete("/:id", factController.deleteFact);
-router.put("/:id", factController.updateFact);
-router.post("/bulk", factController.addMultipleFacts);
-router.post("/generate", factController.generateWithAI);
+router.get("/", getAllFacts);
+router.post("/", createFact);
+router.delete("/:id", deleteFact);
+router.put("/:id", updateFact);
+router.post("/bulk", addMultipleFacts);
+router.post("/generate", generateWithAI);
 
 module.exports = router;

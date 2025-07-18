@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const FoodInfoSchema = new mongoose.Schema(
+const foodInfoSchema = new mongoose.Schema(
   {
     image: {
       type: String,
@@ -18,4 +18,4 @@ const FoodInfoSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("FoodInfo", FoodInfoSchema);
+module.exports = mongoose.model("FoodInfo", foodInfoSchema);

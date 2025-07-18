@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const AyurvedaModelSchema = new mongoose.Schema(
+const categorySchema = new mongoose.Schema(
   {
     name: { type: String, required: true, unique: true },
     description: { type: String, required: true },
@@ -14,4 +14,4 @@ const AyurvedaModelSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("AyurvedaModelSchema", AyurvedaModelSchema);
+module.exports = mongoose.model("Category", categorySchema);

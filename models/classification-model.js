@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ClassificationSchema = new mongoose.Schema(
+const classificationSchema = new mongoose.Schema(
   {
     icon: {
       type: String,
@@ -34,4 +34,4 @@ const ClassificationSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Classification", ClassificationSchema);
+module.exports = mongoose.model("Classification", classificationSchema);
