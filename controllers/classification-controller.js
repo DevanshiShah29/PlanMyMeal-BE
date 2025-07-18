@@ -26,7 +26,7 @@ exports.createClassification = async (req, res) => {
 
 exports.getAllClassifications = async (req, res) => {
   try {
-    const classifications = await Classification.find().sort({ name: 1 });
+    const classifications = await Classification.find().sort({ createdAt: -1 });
     res.json(classifications);
   } catch (err) {
     res.status(500).json({

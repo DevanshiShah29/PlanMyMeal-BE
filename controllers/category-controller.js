@@ -4,7 +4,7 @@ const Classification = require("../models/classification-model");
 // GET
 exports.getAllCategories = async (req, res) => {
   try {
-    const categories = await AyurvedaModel.find().populate("classification", "name");
+    const categories = await AyurvedaModel.find().populate("classification", "name icon");
     res.status(200).json({ success: true, data: categories });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
@@ -33,7 +33,7 @@ exports.createCategory = async (req, res) => {
 
     const savedCategory = await newCategory.save();
 
-    const populatedCategory = await AyurvedaModel.findById(savedCategory._id).populate("classification", "name");
+    const populatedCategory = await AyurvedaModel.findById(savedCategory._id).populate("classification", "name icon");
 
     res.status(201).json({ success: true, data: populatedCategory });
   } catch (error) {
@@ -58,7 +58,7 @@ exports.updateCategory = async (req, res) => {
       id,
       { name, description, items, classification },
       { new: true, runValidators: true }
-    ).populate("classification", "name");
+    ).populate("classification", "name icon");
 
     if (!updatedCategory) {
       return res.status(404).json({ success: false, error: "Category not found" });

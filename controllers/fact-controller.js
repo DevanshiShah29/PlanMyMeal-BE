@@ -1,4 +1,3 @@
-// controllers/factController.js
 const Fact = require("../models/fact-model");
 const { generateFactAnswer } = require("../utils/generate-answer");
 
