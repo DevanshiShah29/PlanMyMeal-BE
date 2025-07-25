@@ -1,13 +1,11 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const generateFactAnswer = async (question) => {
-  const prompt = `Generate a 2-3 lines for without repeating the question text itself:
-   ${question}
-  
-  Include:
-    - links or a link
-  
-  Keep it under 100 words.`;
+  const prompt = `Generate a concise 2-3 line response to ${question} without restating the question. 
+- Keep under 200 words
+- Optionally add links,  use format :https://example.com (no brackets) 
+- Maintain neutral/professional tone
+- Include only most relevant information`;
 
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
